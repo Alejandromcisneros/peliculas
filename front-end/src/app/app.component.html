@@ -1,0 +1,19 @@
+<!--SE MANDA LLAMAR EL MENU CREADO-->
+<app-menu></app-menu>
+
+<!--SE MANDA LLAMAR EL CONTENEDOR CON MARGEN-->
+<div class="contenedor">
+
+
+    <router-outlet></router-outlet>
+
+    <!--CALIFICACION DE ESTRELLAS y en rated se manda llamar el mensaje de seleccion de app.component.ts
+        <app-rating (rated)="manejarRated($event)"></app-rating>
+    -->
+
+        <!--CREAR BOTON PARA CARGAR ARCHIVO, SE USAN LAS DOS LINEAS DE CODIGO 
+            <input type="file" style="display: none" #cargarImagen>
+            <button (click)="cargarImagen.click()">Cargar Archivo</button>
+            </div>
+        -->
+</div>
