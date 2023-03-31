@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLetraMayuscula';
+import { generoCreacionDTO } from '../genero';
 
 @Component({
   selector: 'app-crear-genero',
   templateUrl: './crear-genero.component.html',
   styleUrls: ['./crear-genero.component.css']
 })
-export class CrearGeneroComponent implements OnInit{
-  constructor(private router: Router){
-
-  }
+export class CrearGeneroComponent {
+  constructor(private router: Router){  }
 
 
-  ngOnInit(): void {
-  }
-  guardarCambios(){
+  guardarCambios(genero:generoCreacionDTO){
     //GUARDAR LOS CAMBIOS
 
       //REDIRIGE A LA HOJA GENEROS
-    this.router.navigate(['/generos'])
+      console.log(genero)
+    this.router.navigate(['/generos']);
   }
 
 }
+
