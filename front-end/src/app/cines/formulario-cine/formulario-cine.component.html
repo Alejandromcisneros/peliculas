@@ -3,13 +3,16 @@
         <mat-label>Nombre*</mat-label>
         <input formControlName="nombre" matInput/>
         <mat-error *ngIf="form.invalid">El campo NOMBRE es requerido
-            
         </mat-error>
     </mat-form-field>
 
+    <h4>Seleccione el cine en el mapa</h4>
     
     <div>
-        <app-mapa></app-mapa>
+        <app-mapa 
+        (coordenadaSeleccionada)="coordenadaSeleccionada($event)"
+        [coordenadasIniciales]="coordenadaInicial"
+        ></app-mapa>
     </div>
 
     <div>

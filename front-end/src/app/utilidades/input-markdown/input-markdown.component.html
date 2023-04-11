@@ -1,8 +1,13 @@
 <mat-tab-group>
     <mat-tab label="Editar">
-        <mat-form-field appearance="fill">
-            <mat-label>Biografia</mat-label>
-            <textarea (input)="inputTextArea($event.target.value)" matInput></textarea>
+        <mat-form-field appearance="fill" (change)="changeMarkdown.emit($event.target.value)">
+            <mat-label>{{placeHolderTextoArea}}</mat-label>
+            <!-- USO DE BILDING DE DOBLE VÍA VIDEO 62 -->
+            <textarea [(ngModel)]="contenidoMarkDown" matInput></textarea>
+
+
+            <!-- ESTO SE UTILIZA PARA UNA SOLA VIA -->
+            <!-- <textarea (input)="inputTextArea($event.target.value)" matInput></textarea> -->
         </mat-form-field>  
 
     </mat-tab>

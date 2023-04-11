@@ -7,7 +7,7 @@ import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 
 //importar modulo para FORMULARIOS REACTIVOS
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
@@ -32,8 +32,10 @@ import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
 import{MarkdownModule} from 'ngx-markdown';
 import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
-import{LeafletModule} from '@asymmetrik/ngx-leaflet';
-import { MapaComponent } from './utilidades/mapa/mapa.component'
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
+import { MapaComponent } from './utilidades/mapa/mapa.component';
+import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component'
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import { MapaComponent } from './utilidades/mapa/mapa.component'
     InputImgComponent,
     InputMarkdownComponent,
     FormularioCineComponent,
-    MapaComponent
+    MapaComponent,
+    FormularioPeliculaComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +72,7 @@ import { MapaComponent } from './utilidades/mapa/mapa.component'
     MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
     LeafletModule,
     MarkdownModule.forRoot()
   ],

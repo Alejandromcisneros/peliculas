@@ -1,6 +1,9 @@
-<div leaflet 
+<div 
+leaflet 
 [leafletOptions]="options" 
 (leafletClick)="manejarClick($event)"
-leafletLayer="capas">
-
+[leafletLayers]="capas"
+style="height: 500px; width: 900px"
+>
+ 
 </div>
