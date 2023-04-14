@@ -34,6 +34,19 @@
     (changeMarkdown)="changeMarkdown($event)"
     [placeHolderTextoArea]="'Resumen'"></app-input-markdown>
 
+    <h4>Selecciona el género al que pertenece la pelicula</h4>
+    <app-selector-multiple [Seleccionados]="generosSeleccionados" 
+    [NoSeleccionados]="generosNoSeleccionados"></app-selector-multiple>
+
+
+    <h4>Selecciona los cines donde estará disponible</h4>
+    <app-selector-multiple [Seleccionados]="cinesSeleccionados" 
+    [NoSeleccionados]="cinesNoSeleccionados"></app-selector-multiple>
+
+
+    <h4>Selecciona los actores en la pelicula</h4>
+    <app-autocomplete-actores></app-autocomplete-actores>
+
     <div>
         <button mat-flat-button="primary" [disabled]="form.invalid">
             Guardar Cambios
