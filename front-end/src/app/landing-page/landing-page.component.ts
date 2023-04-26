@@ -29,17 +29,20 @@ export class LandingPageComponent implements OnInit{
    peliculasProximosEstrenos = [{
     titulo : 'Sin Limite',
      fechaEstreno : new Date(),
-     precioBoleto : 12.66
+     precioBoleto : 12.66,
+     poster: "https://m.media-amazon.com/images/I/7170GPXbWKL._AC_SY445_.jpg"
    },
    {
-    titulo : 'EL PODER DE LA JUNGLA',
+    titulo : 'Jurassic World',
      fechaEstreno : new Date('10-01-23'),
-     precioBoleto : 120
+     precioBoleto : 120,
+     poster: 'https://m.media-amazon.com/images/I/51vvY5E-1wL._SX421_BO1,204,203,200_.jpg'
    },
    {
-    titulo : 'Resurreccion',
+    titulo : 'No respires',
      fechaEstreno : new Date('10-01-23'),
-     precioBoleto : 120
+     precioBoleto : 120,
+     poster: 'https://es.web.img2.acsta.net/c_310_420/pictures/21/08/18/13/34/2412029.jpg'
    }]
  
 
