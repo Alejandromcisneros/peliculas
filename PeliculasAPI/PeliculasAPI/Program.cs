@@ -1,4 +1,6 @@
 using Microsoft.OpenApi.Models;
+using PeliculasAPI;
+using PeliculasAPI.Controllers;
 using PeliculasAPI.Repositorio;
 
 
@@ -6,14 +8,17 @@ using PeliculasAPI.Repositorio;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IRepositorio, RepositorioEnMemoria>();  //VALORES DISTINTO CADA QUE SE HACE UNA PETICION
+builder.Services.AddScoped<WeatherForecastController>();
+//builder.Services.AddSingleton<IRepositorio, RepositorioEnMemoria>();
+//builder.Services.AddTransient<IRepositorio, RepositorioEnMemoria>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddTransient<IRepositorio, RepositorioEnMemoria>();
+
 
 var app = builder.Build();
 

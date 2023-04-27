@@ -2,19 +2,22 @@
 
 namespace PeliculasAPI.Repositorio
 {
-    public class RepositorioEnMemoria: IRepositorio
+    public class RepositorioEnMemoria : IRepositorio
     {
         private List<Genero> _generos;
-        public RepositorioEnMemoria()
-            {
-                _generos = new List<Genero>()
+        public RepositorioEnMemoria(ILogger<RepositorioEnMemoria> logger)
+        {
+            _generos = new List<Genero>()
                 {
                     new Genero() {Id = 1, Nombre = "Comedia"},
                     new Genero() {Id = 2, Nombre = "Accion"},
                     new Genero() {Id = 3, Nombre = "Drama"}
                 };
 
-            }
+            _guid = Guid.NewGuid(); // ES UN STRING CCFC-3123-dcdcd-e32e23
+
+        }
+        public Guid _guid;
 
         public List<Genero> obtenerTodosLosGeneros() 
         {
@@ -27,6 +30,11 @@ namespace PeliculasAPI.Repositorio
                 return _generos.FirstOrDefault(x => x.Id == Id);
 
         }
+
+        public Guid obtenerGUID()       
+        {
+         return _guid;
+       }
 
     }
 }

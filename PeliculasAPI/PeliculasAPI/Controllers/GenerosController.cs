@@ -6,27 +6,43 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace PeliculasAPI.Controllers
 {
+    
     [Route("api/generos")]
     [ApiController]
     public class GenerosController : ControllerBase
     {
         
         private readonly IRepositorio repositorio;
+        private readonly WeatherForecastController weatherForecastController;
 
-        public GenerosController(IRepositorio repositorio) 
+        public GenerosController(IRepositorio repositorio, WeatherForecastController weatherForecastController) 
         {
             this.repositorio = repositorio;
+            this.weatherForecastController = weatherForecastController;
         }
 
         [HttpGet]//     api/generos
         [HttpGet ("listado")] //     api/generos/listado
+
         [HttpGet("/listadoGeneros")] //     listadoGeneros
-        public ActionResult <List<Genero>> Get() 
+        public ActionResult<List<Genero>> Get() 
         {
             return repositorio.obtenerTodosLosGeneros();
         }
 
-        //[HttpGet("{id}")] //     api/generos/3
+        [HttpGet("guid")] //  api/generos/guid
+        public ActionResult<Guid> GetGUID()
+        {
+
+            return repositorio.obtenerGUID();
+           // return Ok(new
+           // {
+             //   GUID_GenerosController = repositorio.obtenerGUID(),
+           //     GUID_WeatherForecastController = weatherForecastController.obtenerGUIDWeatherForecastController()
+           // });
+        }
+
+        //[HttpGet("{id}")] //     api/generos/3 
         // [HttpGet("{id}/{AJMC}")] //     api/generos/AJMC
 
 
@@ -45,9 +61,7 @@ namespace PeliculasAPI.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Genero>> Get(int id, [FromHeader] string nombre)
         {
-            
-
-            var genero = await repositorio.ObtenerPorId(id);
+           var genero = await repositorio.ObtenerPorId(id);
 
             if (genero == null)
             {
